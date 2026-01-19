@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Global Paslanmaz iletişim - Bize ulaşın, teklif alın. Telefon, e-posta ve adres bilgilerimiz. Mutfak ekipmanı projeleriniz için ücretsiz keşif.">
+  <meta name="keywords" content="global paslanmaz iletişim, teklif al, mutfak ekipmanı fiyat, paslanmaz çelik üretici iletişim">
+  <title>İletişim - Global Paslanmaz | Bize Ulaşın</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-global-paslanmaz.png" alt="Global Paslanmaz Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="logo-text">GLOBAL PASLANMAZ</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="urunler.html" class="nav-link">Ürünler</a>
+        <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+        <a href="sektorler.html" class="nav-link">Sektörler</a>
+        <a href="iletisim.html" class="nav-link">İletişim</a>
+      </nav>
+      
+      <button class="mobile-menu-toggle" aria-label="Menüyü Aç">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="hero" style="padding: 4rem 0;">
+    <div class="container">
+      <div class="hero-content">
+        <h1>İletişim</h1>
+        <p>
+          Mutfak ekipmanı ihtiyaçlarınız için bizimle iletişime geçin. 
+          Ücretsiz keşif ve detaylı fiyat teklifi için formu doldurun veya bizi arayın.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div>
+          <h2 style="margin-bottom: var(--spacing-md); color: var(--text-primary);">
+            Teklif Formu
+          </h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--spacing-md);">
+            Lütfen aşağıdaki formu doldurun, en kısa sürede size geri dönelim. 
+            Tüm alanların doldurulması projenizi daha hızlı değerlendirmemize yardımcı olacaktır.
+          </p>
+
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name" class="form-label">Ad Soyad *</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                class="form-input" 
+                required
+                placeholder="Adınız ve soyadınız"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="company" class="form-label">Firma Adı</label>
+              <input 
+                type="text" 
+                id="company" 
+                name="company" 
+                class="form-input"
+                placeholder="Firma adınız (opsiyonel)"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">E-posta *</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="form-input" 
+                required
+                placeholder="ornek@email.com"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="form-label">Telefon *</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                class="form-input" 
+                required
+                placeholder="+90 (5XX) XXX XX XX"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Konu</label>
+              <select 
+                id="subject" 
+                name="subject" 
+                class="form-input"
+                style="cursor: pointer;"
+              >
+                <option value="">Bir konu seçin</option>
+                <option value="teklif">Fiyat Teklifi İstiyorum</option>
+                <option value="proje">Yeni Proje Danışmanlığı</option>
+                <option value="urun">Ürün Hakkında Bilgi</option>
+                <option value="referans">Referans ve Portfolio</option>
+                <option value="diger">Diğer</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Mesajınız *</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                class="form-textarea" 
+                required
+                placeholder="Projeniz hakkında detaylı bilgi verin (Alan büyüklüğü, ürün ihtiyaçları, özel talepler vb.)"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Mesajı Gönder
+            </button>
+
+            <p style="color: var(--text-light); font-size: 0.85rem; margin-top: var(--spacing-sm);">
+              * İşaretli alanlar zorunludur. Kişisel verileriniz gizlilik politikamız çerçevesinde korunmaktadır.
+            </p>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h2 style="margin-bottom: var(--spacing-md); color: var(--text-primary);">
+            İletişim Bilgileri
+          </h2>
+          
+          <div class="contact-info">
+            <!-- Address -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon" style="font-size: 1.5rem;">
+                📍
+              </div>
+              <div class="contact-info-content">
+                <h4>Adresimiz</h4>
+                <p>
+                  [Sokak Adı], [Mahalle]<br>
+                  [İlçe] / İstanbul, Türkiye<br>
+                  Posta Kodu: XXXXX
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon" style="font-size: 1.5rem;">
+                📞
+              </div>
+              <div class="contact-info-content">
+                <h4>Telefon</h4>
+                <p>
+                  <strong>Satış:</strong> +90 (XXX) XXX XX XX<br>
+                  <strong>Müşteri Hizmetleri:</strong> +90 (XXX) XXX XX XX<br>
+                  <strong>Faks:</strong> +90 (XXX) XXX XX XX
+                </p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon" style="font-size: 1.5rem;">
+                ✉️
+              </div>
+              <div class="contact-info-content">
+                <h4>E-posta</h4>
+                <p>
+                  <strong>Genel:</strong> info@globalpaslanmaz.com.tr<br>
+                  <strong>Satış:</strong> satis@globalpaslanmaz.com.tr<br>
+                  <strong>Destek:</strong> destek@globalpaslanmaz.com.tr
+                </p>
+              </div>
+            </div>
+
+            <!-- Working Hours -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon" style="font-size: 1.5rem;">
+                🕐
+              </div>
+              <div class="contact-info-content">
+                <h4>Çalışma Saatleri</h4>
+                <p>
+                  <strong>Hafta İçi:</strong> 08:00 - 18:00<br>
+                  <strong>Cumartesi:</strong> 09:00 - 14:00<br>
+                  <strong>Pazar:</strong> Kapalı
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div style="margin-top: var(--spacing-lg);">
+            <h3 style="margin-bottom: var(--spacing-sm); color: var(--text-primary); font-size: 1.1rem;">
+              Sosyal Medya
+            </h3>
+            <p style="color: var(--text-secondary); margin-bottom: var(--spacing-sm); font-size: 0.95rem;">
+              Bizi sosyal medyada takip edin, projelerimiz ve yeni ürünlerimizden haberdar olun.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Facebook" style="background-color: var(--primary-color);">
+                <span style="font-weight: bold;">f</span>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram" style="background-color: var(--primary-color);">
+                <span>📷</span>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn" style="background-color: var(--primary-color);">
+                <span style="font-weight: bold;">in</span>
+              </a>
+              <a href="#" class="social-link" aria-label="WhatsApp" style="background-color: var(--primary-color);">
+                <span>💬</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="section section-light">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: var(--spacing-md); color: var(--text-primary);">
+        Konum
+      </h2>
+      <div class="map-container">
+        <div class="map-placeholder">
+          <p style="font-size: 3rem; margin-bottom: var(--spacing-sm);">🗺️</p>
+          <p style="font-size: 1.1rem; color: var(--text-secondary);">
+            <strong>Google Maps Harita Alanı</strong>
+          </p>
+          <p style="font-size: 0.9rem;">
+            Buraya Google Maps embed kodu eklenecek.<br>
+            Örnek: &lt;iframe src="YOUR_GOOGLE_MAPS_EMBED_URL"&gt;&lt;/iframe&gt;
+          </p>
+        </div>
+      </div>
+      
+      <!-- Map Integration Instructions (Comment for developer) -->
+      <!--
+        Google Maps Entegrasyonu:
+        1. https://www.google.com/maps adresine gidin
+        2. İşletme adresinizi arayın
+        3. "Paylaş" butonuna tıklayın
+        4. "Harita yerleştir" seçeneğini seçin
+        5. Iframe kodunu kopyalayın
+        6. Yukarıdaki map-container div'inin içine yapıştırın
+        
+        Örnek:
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE" 
+          width="100%" 
+          height="400" 
+          style="border:0; border-radius: 8px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      -->
+    </div>
+  </section>
+
+  <!-- FAQ / Quick Info -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h4 class="card-title">Ücretsiz keşif hizmeti veriyor musunuz?</h4>
+          <p class="card-text">
+            Evet, İstanbul ve çevre illerde ücretsiz keşif ve ölçüm hizmeti veriyoruz. 
+            Diğer iller için lütfen bizimle iletişime geçin.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 class="card-title">Teslimat süresi ne kadar?</h4>
+          <p class="card-text">
+            Standart ürünlerde 7-14 iş günü, özel tasarım ve büyük projelerde 3-6 hafta 
+            arasında teslimat yapıyoruz.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 class="card-title">Montaj hizmeti veriyor musunuz?</h4>
+          <p class="card-text">
+            Evet, tüm Türkiye'ye profesyonel montaj hizmeti sunuyoruz. 
+            Montaj ekibimiz ürünlerinizi güvenli şekilde kurar.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 class="card-title">Özel ölçülerde üretim yapıyor musunuz?</h4>
+          <p class="card-text">
+            Evet, standart ürünlerimizin yanı sıra özel ölçü ve tasarımlarda üretim yapabiliyoruz. 
+            İhtiyaçlarınız için teklif alın.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 class="card-title">Garanti süresi ne kadar?</h4>
+          <p class="card-text">
+            Tüm ürünlerimiz en az 2 yıl garantilidir. Bazı ürünlerde garanti süresi daha uzundur. 
+            Detaylar için satış ekibimizle görüşün.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 class="card-title">Hangi ödeme yöntemlerini kabul ediyorsunuz?</h4>
+          <p class="card-text">
+            Banka transferi, kredi kartı ve vadeli ödeme seçeneklerimiz mevcuttur. 
+            Kurumsal müşterilerimiz için özel finansman çözümleri sunuyoruz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Hemen Arayın!</h2>
+        <p class="section-subtitle">
+          Acil teklif mi gerekiyor? Satış ekibimiz size yardımcı olmak için hazır bekliyor.
+        </p>
+        <div style="margin-top: var(--spacing-md);">
+          <a href="tel:+90XXXXXXXXXX" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 2.5rem;">
+            📞 +90 (XXX) XXX XX XX
+          </a>
+        </div>
+        <p style="margin-top: var(--spacing-md); color: var(--text-secondary);">
+          veya WhatsApp üzerinden bize yazın
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <img src="assets/logo-global-paslanmaz.png" alt="Global Paslanmaz" onerror="this.style.display='none';">
+            <h4 style="color: white; margin-top: 0.5rem;">GLOBAL PASLANMAZ</h4>
+          </div>
+          <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+            Endüstriyel mutfak ekipmanları ve paslanmaz çelik ürünlerde güvenilir çözüm ortağınız.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><span>f</span></a>
+            <a href="#" class="social-link" aria-label="Instagram"><span>📷</span></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><span>in</span></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Hızlı Linkler</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="urunler.html">Ürünlerimiz</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="sektorler.html">Sektörler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Ürün Kategorileri</h4>
+          <ul class="footer-links">
+            <li><a href="urunler.html#tezgahlar">Çalışma Tezgahları</a></li>
+            <li><a href="urunler.html#davlumbazlar">Endüstriyel Davlumbazlar</a></li>
+            <li><a href="urunler.html#dolaplar">Dolap ve Raf Sistemleri</a></li>
+            <li><a href="urunler.html#lavabolar">Lavabo ve Eviyeler</a></li>
+            <li><a href="urunler.html#ozel">Özel Üretim</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>İletişim Bilgileri</h4>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 0.5rem;">
+            <strong>Adres:</strong><br>İstanbul, Türkiye
+          </p>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 0.5rem;">
+            <strong>Telefon:</strong><br>+90 (XXX) XXX XX XX
+          </p>
+          <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 0.5rem;">
+            <strong>E-posta:</strong><br>info@globalpaslanmaz.com.tr
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Global Paslanmaz. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
