@@ -8,6 +8,7 @@
 /* ========================================
    CUSTOM FONT
    ======================================== */
+/* Optional: Add cmunss.ttf to project root for CMU Sans Serif. Falls back to system fonts if missing. */
 @font-face {
   font-family: 'CMU Sans Serif';
   src: url('cmunss.ttf') format('truetype');
@@ -96,6 +97,25 @@ a {
   color: inherit;
   text-decoration: none;
   transition: var(--transition);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--primary-color);
+  color: var(--bg-white);
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  z-index: 10000;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: var(--spacing-sm);
+  outline: 3px solid var(--accent-bright);
+  outline-offset: 2px;
 }
 
 /* ========================================
