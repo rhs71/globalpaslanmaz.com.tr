@@ -199,23 +199,25 @@ For questions or assistance with the website:
 
 ## ✅ Pre-Deployment Checklist
 
-Before going live, make sure to:
+**Already done (production-ready):**
+- [x] Canonical URLs and Open Graph meta on all pages
+- [x] Skip link and `<main>` landmark for accessibility
+- [x] Mobile menu with `aria-expanded` / `aria-label`
+- [x] Footer: contact info (Düzce, +90 501 945 62 25, e-posta) and © 2026 on all pages
+- [x] İletişim: CTA with `tel:` and WhatsApp link; form ready for backend
+
+**Before or after going live:**
 - [ ] Add your actual logo (`assets/logo-global-paslanmaz.png`)
 - [ ] Add favicon (`assets/favicon.png`)
-- [ ] Replace all placeholder phone numbers
-- [ ] Update email addresses
-- [ ] Add physical address
-- [ ] Integrate Google Maps
-- [ ] Set up form handling (Formspree or alternative)
-- [ ] Add social media links
-- [ ] Replace reference placeholders with actual client names/logos
-- [ ] Test all navigation links
-- [ ] Test on mobile devices
-- [ ] Check all forms and interactive elements
+- [ ] Integrate Google Maps in `iletisim.html` (see comment in file)
+- [ ] Set up form handling: add Formspree/Netlify endpoint to contact form (see comment in `iletisim.html`)
+- [ ] Add real social media URLs (footer links are currently `#`)
+- [ ] Optionally replace reference placeholders on Sektörler with client names/logos
+- [ ] Test all navigation links and forms on desktop and mobile
 
 ## 📄 License
 
-© 2024 Global Paslanmaz. All rights reserved.
+© 2026 Global Paslanmaz. All rights reserved.
 
 ---
 

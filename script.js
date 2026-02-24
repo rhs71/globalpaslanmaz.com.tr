@@ -11,11 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const nav = document.querySelector('.nav');
   
   if (mobileMenuToggle && nav) {
+    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    mobileMenuToggle.setAttribute('aria-controls', 'main-nav');
+    if (nav.id !== 'main-nav') nav.id = 'main-nav';
+
     mobileMenuToggle.addEventListener('click', function() {
-      nav.classList.toggle('active');
-      
-      // Animate hamburger icon
+      var isOpen = nav.classList.toggle('active');
       this.classList.toggle('active');
+      this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      this.setAttribute('aria-label', isOpen ? 'Menüyü Kapat' : 'Menüyü Aç');
     });
     
     // Close mobile menu when clicking on a nav link
@@ -24,17 +28,21 @@ document.addEventListener('DOMContentLoaded', function() {
       link.addEventListener('click', function() {
         nav.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.setAttribute('aria-label', 'Menüyü Aç');
       });
     });
-    
+
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
       const isClickInsideNav = nav.contains(event.target);
       const isClickOnToggle = mobileMenuToggle.contains(event.target);
-      
+
       if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
         nav.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.setAttribute('aria-label', 'Menüyü Aç');
       }
     });
   }
