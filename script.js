@@ -75,36 +75,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Contact form: mailto to info@globalpaslanmaz.com.tr with CC mertcan.hocaoglu@gmail.com
+  // Contact form: AJAX ile Formspree'e gönder, e-posta istemcisi açılmaz
   const contactForm = document.getElementById('contact-form');
-  
+  const successEl = document.getElementById('contact-form-success');
+  const errorEl = document.getElementById('contact-form-error');
+  const submitBtn = document.getElementById('contact-submit-btn');
+  const replytoEl = document.getElementById('contact-replyto');
+
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      var name = (document.getElementById('name') && document.getElementById('name').value) || '';
-      var company = (document.getElementById('company') && document.getElementById('company').value) || '';
-      var email = (document.getElementById('email') && document.getElementById('email').value) || '';
-      var phone = (document.getElementById('phone') && document.getElementById('phone').value) || '';
-      var subjectEl = document.getElementById('subject');
-      var subjectText = subjectEl ? (subjectEl.options[subjectEl.selectedIndex] ? subjectEl.options[subjectEl.selectedIndex].text : '') : '';
-      var message = (document.getElementById('message') && document.getElementById('message').value) || '';
+      if (replytoEl) {
+        var emailInput = document.getElementById('email');
+        replytoEl.value = emailInput ? emailInput.value : '';
+      }
+      if (successEl) successEl.hidden = true;
+      if (errorEl) errorEl.hidden = true;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Gönderiliyor…';
+      }
 
-      var body = 'Ad Soyad: ' + name + '\r\n';
-      body += 'Firma: ' + company + '\r\n';
-      body += 'E-posta: ' + email + '\r\n';
-      body += 'Telefon: ' + phone + '\r\n';
-      body += 'Konu: ' + subjectText + '\r\n\r\n';
-      body += 'Mesaj:\r\n' + message;
+      var formAction = contactForm.getAttribute('action') || '';
+      if (formAction.indexOf('YOUR_FORM_ID') !== -1) {
+        if (errorEl) { errorEl.hidden = false; errorEl.textContent = 'Form henüz yapılandırılmadı. Lütfen site yöneticisi ile iletişime geçin.'; }
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Mesajı Gönder'; }
+        return;
+      }
 
-      var mailtoUrl = 'mailto:info@globalpaslanmaz.com.tr';
-      mailtoUrl += '?cc=mertcan.hocaoglu@gmail.com';
-      mailtoUrl += '&subject=' + encodeURIComponent('Global Paslanmaz - İletişim Formu');
-      mailtoUrl += '&body=' + encodeURIComponent(body);
-
-      window.location.href = mailtoUrl;
-      alert('E-posta istemciniz açılacaktır. Mesajı göndererek iletebilirsiniz. Teşekkür ederiz.');
-      this.reset();
+      fetch(formAction, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function(response) {
+          if (response.ok) {
+            contactForm.reset();
+            if (successEl) successEl.hidden = false;
+          } else {
+            if (errorEl) errorEl.hidden = false;
+          }
+        })
+        .catch(function() {
+          if (errorEl) errorEl.hidden = false;
+        })
+        .finally(function() {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Mesajı Gönder';
+          }
+        });
     });
   }
   

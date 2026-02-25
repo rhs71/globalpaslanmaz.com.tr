@@ -78,8 +78,10 @@
             Tüm alanların doldurulması projenizi daha hızlı değerlendirmemize yardımcı olacaktır.
           </p>
 
-          <!-- Form backend: Formspree, Netlify Forms veya kendi API'nizi form action olarak ekleyebilirsiniz. -->
-          <form id="contact-form">
+          <!-- Formspree: https://formspree.io adresinde ücretsiz form oluşturup YOUR_FORM_ID yerine kendi form ID'nizi yazın. E-postalar info@globalpaslanmaz.com.tr adresine gider; CC için Formspree panelinde ek bildirim ekleyebilirsiniz. -->
+          <form id="contact-form" action="https://formspree.io/f/xdalybva" method="POST">
+            <input type="hidden" name="_subject" value="Global Paslanmaz - İletişim Formu">
+            <input type="hidden" name="_replyto" id="contact-replyto">
             <div class="form-group">
               <label for="name" class="form-label">Ad Soyad *</label>
               <input 
@@ -155,9 +157,16 @@
               ></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <button type="submit" class="btn btn-primary" style="width: 100%;" id="contact-submit-btn">
               Mesajı Gönder
             </button>
+
+            <div id="contact-form-success" class="form-success-msg" role="status" aria-live="polite" hidden>
+              Teşekkür ederiz! Mesajınız alındı. En kısa sürede size dönüş yapacağız.
+            </div>
+            <div id="contact-form-error" class="form-error-msg" role="alert" hidden>
+              Bir hata oluştu. Lütfen tekrar deneyin veya bizi doğrudan arayın.
+            </div>
 
             <p style="color: var(--text-light); font-size: 0.85rem; margin-top: var(--spacing-sm);">
               * İşaretli alanlar zorunludur. Kişisel verileriniz gizlilik politikamız çerçevesinde korunmaktadır.
