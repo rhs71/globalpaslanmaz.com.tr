@@ -111,7 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(function(response) {
           if (response.ok) {
             contactForm.reset();
-            if (successEl) successEl.hidden = false;
+            if (successEl) successEl.hidden = true;
+            var modal = document.getElementById('contact-success-modal');
+            if (modal) {
+              modal.classList.add('modal-open');
+              modal.setAttribute('aria-hidden', 'false');
+              document.body.style.overflow = 'hidden';
+            }
           } else {
             if (errorEl) errorEl.hidden = false;
           }
@@ -125,6 +131,24 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Mesajı Gönder';
           }
         });
+    });
+  }
+
+  // Modal kapat: Tamam butonu ve overlay tıklama
+  function closeSuccessModal() {
+    var modal = document.getElementById('contact-success-modal');
+    if (modal) {
+      modal.classList.remove('modal-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+  var modalCloseBtn = document.getElementById('modal-close-btn');
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeSuccessModal);
+  var modalOverlay = document.getElementById('contact-success-modal');
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', function(e) {
+      if (e.target === modalOverlay) closeSuccessModal();
     });
   }
   
