@@ -75,47 +75,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Form submission handler (static form - ready for backend integration)
+  // Contact form: mailto to info@globalpaslanmaz.com.tr with CC mertcan.hocaoglu@gmail.com
   const contactForm = document.getElementById('contact-form');
   
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
-      
-      // TODO: Integrate with form service (Formspree, Netlify Forms, or custom backend)
-      // For now, just show a success message
-      console.log('Form data:', data);
-      
-      alert('Teşekkür ederiz! Mesajınız alınmıştır. En kısa sürede size dönüş yapacağız.');
-      
-      // Reset form
+      var name = (document.getElementById('name') && document.getElementById('name').value) || '';
+      var company = (document.getElementById('company') && document.getElementById('company').value) || '';
+      var email = (document.getElementById('email') && document.getElementById('email').value) || '';
+      var phone = (document.getElementById('phone') && document.getElementById('phone').value) || '';
+      var subjectEl = document.getElementById('subject');
+      var subjectText = subjectEl ? (subjectEl.options[subjectEl.selectedIndex] ? subjectEl.options[subjectEl.selectedIndex].text : '') : '';
+      var message = (document.getElementById('message') && document.getElementById('message').value) || '';
+
+      var body = 'Ad Soyad: ' + name + '\r\n';
+      body += 'Firma: ' + company + '\r\n';
+      body += 'E-posta: ' + email + '\r\n';
+      body += 'Telefon: ' + phone + '\r\n';
+      body += 'Konu: ' + subjectText + '\r\n\r\n';
+      body += 'Mesaj:\r\n' + message;
+
+      var mailtoUrl = 'mailto:info@globalpaslanmaz.com.tr';
+      mailtoUrl += '?cc=mertcan.hocaoglu@gmail.com';
+      mailtoUrl += '&subject=' + encodeURIComponent('Global Paslanmaz - İletişim Formu');
+      mailtoUrl += '&body=' + encodeURIComponent(body);
+
+      window.location.href = mailtoUrl;
+      alert('E-posta istemciniz açılacaktır. Mesajı göndererek iletebilirsiniz. Teşekkür ederiz.');
       this.reset();
-      
-      // Example integration with Formspree (uncomment and add your Formspree endpoint):
-      /*
-      fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => {
-        if (response.ok) {
-          alert('Teşekkür ederiz! Mesajınız alınmıştır.');
-          this.reset();
-        } else {
-          alert('Bir hata oluştu. Lütfen tekrar deneyin.');
-        }
-      })
-      .catch(error => {
-        alert('Bir hata oluştu. Lütfen tekrar deneyin.');
-      });
-      */
     });
   }
   
